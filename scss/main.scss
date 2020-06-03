@@ -1,0 +1,207 @@
+// Gradient effect
+$gradientFrom: hsl(6, 100%, 80%);
+$gradientTo: hsl(335, 100%, 65%);
+
+// Neutral color
+$paleBlue: hsl(243, 100%, 93%);
+$grayishBlue: hsl(229, 7%, 55%);
+$darkBlue: hsl(228, 56%, 26%);
+$veryDarkBlue: hsl(229, 57%, 11%);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  background: {
+    image: url(../images/bg-mobile.svg);
+    repeat: no-repeat;
+    position: center;
+    size: cover;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+}
+
+img {
+  display: inline-block;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 120px 20px 150px;
+  .company {
+    background-color: $darkBlue;
+    margin-bottom: 15px;
+    padding: 40px;
+    border-radius: 10px 100px 10px 10px;
+    .logo {
+      padding-bottom: 30px;
+    }
+    .services {
+      > ul {
+        > li {
+          float: left;
+          > a {
+            margin-right: 15px;
+            width: 50px;
+            height: 50px;
+            background-color: $veryDarkBlue;
+            text-align: center;
+            border-radius: 10px;
+            > img {
+              position: relative;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+    }
+  }
+  .storage {
+    position: relative;
+    background-color: $darkBlue;
+    padding: 40px 0;
+    border-radius: 10px;
+    color: $paleBlue;
+    text-align: center;
+    .current-use-text {
+      // letter-spacing: 1px;
+      > span {
+        font-weight: 700;
+      }
+    }
+    .current-use-bar {
+      padding: 20px 35px;
+      .total {
+        height: 20px;
+        background-color: $veryDarkBlue;
+        border-radius: 10px;
+        .usage-amount {
+          position: relative;
+          height: 80%;
+          width: 75%;
+          top: 10%;
+          left: 2px;
+          background-image: linear-gradient(
+            to right,
+            $gradientFrom,
+            $gradientTo
+          );
+          border-radius: 10px;
+          .dot {
+            float: right;
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background-color: #fff;
+            position: relative;
+            top: 2px;
+            right: 2px;
+          }
+        }
+      }
+    }
+    .limits {
+      padding: 0 35px 10px;
+      font-weight: 700;
+      .least {
+        float: left;
+      }
+      .most {
+        float: right;
+      }
+    }
+    .storage-left {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      padding: 15px 25px;
+      border-radius: 10px;
+      background-color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      white-space: nowrap;
+      .num {
+        padding-right: 5px;
+        color: #000;
+        font-size: 40px;
+      }
+      .gb {
+        color: $grayishBlue;
+        position: relative;
+        bottom: 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    background: {
+      color: $veryDarkBlue;
+      image: url(../images/bg-desktop.svg);
+      position: 0 390px;
+      size: contain;
+    }
+  }
+
+  .container {
+    max-width: 1000px;
+    padding: 300px 0;
+    .company {
+      width: 1000px * 0.35;
+      float: left;
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+    .storage {
+      width: 1000px * 0.6;
+      float: left;
+      margin-top: 41px;
+      padding: 40px 0 30px;
+      .current-use-text {
+        text-align: left;
+        padding: 0 35px;
+      }
+      .current-use-bar {
+        padding: 20px 35px 10px;
+      }
+      .storage-left {
+        bottom: 100%;
+        left: 100%;
+        transform: translate(-120%, 40%);
+        .arrow-left {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          transform: translateY(50%);
+          width: 0;
+          height: 0;
+          border-top: 20px solid transparent;
+          border-bottom: 20px solid transparent;
+          border-right: 20px solid #fff;
+        }
+      }
+    }
+  }
+}

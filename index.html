@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+
+    <link rel="stylesheet" href="./normalize/normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/main.css" />
+  </head>
+  <body>
+    <div class="container clearfix">
+      <div class="company">
+        <div class="logo">
+          <img src="./images/logo.svg" alt="logo" />
+        </div>
+
+        <div class="services">
+          <ul class="clearfix">
+            <li>
+              <a href="#">
+                <img src="./images/icon-document.svg" alt="document" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/icon-folder.svg" alt="folder" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/icon-upload.svg" alt="upload" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="storage">
+        <div class="current-use-text">
+          You’ve used <span>815 GB</span> of your storage
+        </div>
+        <div class="current-use-bar">
+          <div class="total">
+            <div class="usage-amount clearfix">
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+        <div class="limits clearfix">
+          <span class="least">0 GB</span>
+          <span class="most">1000 GB</span>
+        </div>
+        <div class="storage-left">
+          <span class="num">185</span> <span class="gb">GB Left</span>
+          <div class="arrow-left"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
